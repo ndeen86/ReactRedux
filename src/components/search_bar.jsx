@@ -7,7 +7,7 @@ const SearchBar = () =>
 
 export const SearchBarResult = () =>
 {
-    return <div>Search Bar Result is Rendered!</div>;
+    return <input />;
 }
 
 export default SearchBar;
