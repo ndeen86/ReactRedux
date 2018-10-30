@@ -10,4 +10,4 @@ export const SearchBarResult = () =>
     return <input />;
 }
 
-export default SearchBar;
+export default SearchBar as SearchBarComponent;
