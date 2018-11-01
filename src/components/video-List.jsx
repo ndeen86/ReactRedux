@@ -1,8 +1,17 @@
 import React from 'react';
+import VideoListItem from './video-ListItem';
 
-const VideoList = () =>
+const VideoList = ({videos}) =>
 {
-    return <li>Video List component</li>;
+    const videoListItems = videos.map(video => {
+        return <VideoListItem key={video.title} videoItem={video}/>
+    });
+    return (
+        <ul>
+            {videoListItems}
+        </ul>
+    );
+    
 }
 
 export default VideoList;

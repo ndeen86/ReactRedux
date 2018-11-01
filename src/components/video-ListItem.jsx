@@ -1,6 +1,8 @@
 import React from 'react';
 
-const videoListItem = () =>
+const VideoListItem = ({videoItem}) =>
 {
-    return <li>Video List Item component</li>;
+    return <li>{videoItem.title}</li>;
 }
+
+export default VideoListItem;

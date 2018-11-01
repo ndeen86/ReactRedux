@@ -5,6 +5,17 @@ import VideoList from './video-List';
 
 export default class App extends Component {
   render() {
+    const videos = [
+      {
+        title: 'Name 1'
+      },
+      {
+        title: 'Name 2'
+      },
+      {
+        title: 'Name 3'
+      }
+    ];
     return (
       <div>
         <div className="col-md-8">
@@ -16,7 +27,7 @@ export default class App extends Component {
             <VideoDetails />
           </div>
           <div className="col-md-6">
-            <VideoList />
+            <VideoList videos={videos} />
           </div>
         </div>
       </div>
