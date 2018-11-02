@@ -9,7 +9,7 @@ class App extends Component {
   {
     super(props);
     this.state = { videos: []};
-    YTSearch({key:'{ Api Key }', term:'Creation'}, (videos) =>
+    YTSearch({key:'', term:'Creation'}, (videos) =>
     {
       this.setState({ videos });
     });
@@ -24,8 +24,7 @@ class App extends Component {
     return (
       <div>
         <div className="col-md-8">
-          <SearchBar />
-          <SearchBarResult onHandleChange={this.onHandleChange} />
+          <SearchBar onHandleChange={this.onHandleChange}/>
         </div>
         <div>
           <div className="col-md-6">
