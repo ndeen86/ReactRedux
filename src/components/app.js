@@ -2,20 +2,22 @@ import React, { Component } from 'react';
 import SearchBar, { SearchBarResult } from './search_bar';
 import VideoDetails from './video-Details';
 import VideoList from './video-List';
+import YTSearch from 'youtube-api-search';
 
-export default class App extends Component {
+class App extends Component {
+  constructor(props)
+  {
+    super(props);
+    this.state = { videos: []};
+    YTSearch({key:'{Your youtube api key}', term:'Creation'}, (data) =>
+    {
+      
+      // this.setState({ videos: data });
+      this.setState({ videos: data });
+    });
+  }
+
   render() {
-    const videos = [
-      {
-        title: 'Name 1'
-      },
-      {
-        title: 'Name 2'
-      },
-      {
-        title: 'Name 3'
-      }
-    ];
     return (
       <div>
         <div className="col-md-8">
@@ -27,10 +29,12 @@ export default class App extends Component {
             <VideoDetails />
           </div>
           <div className="col-md-6">
-            <VideoList videos={videos} />
+            <VideoList videos={this.state.videos} />
           </div>
         </div>
       </div>
     );
   }
 }
+
+export default App;
