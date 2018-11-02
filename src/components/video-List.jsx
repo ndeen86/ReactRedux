@@ -14,7 +14,6 @@ const VideoList = ({videos}) =>
             {videoListItems}
         </ul>
     );
-    
 }
 
 export default VideoList;

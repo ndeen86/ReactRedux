@@ -9,12 +9,15 @@ class App extends Component {
   {
     super(props);
     this.state = { videos: []};
-    YTSearch({key:'{Your youtube api key}', term:'Creation'}, (data) =>
+    YTSearch({key:'AIzaSyCch6lnONqFNJY9jeAkRBk6OM11FAExKs0', term:'Creation'}, (videos) =>
     {
-      
-      // this.setState({ videos: data });
-      this.setState({ videos: data });
+      this.setState({ videos });
     });
+    this.onHandleChange = this.onHandleChange.bind(this);
+  }
+
+  onHandleChange(event) {
+    console.log(event);
   }
 
   render() {
@@ -22,7 +25,7 @@ class App extends Component {
       <div>
         <div className="col-md-8">
           <SearchBar />
-          <SearchBarResult />
+          <SearchBarResult onHandleChange={this.onHandleChange} />
         </div>
         <div>
           <div className="col-md-6">

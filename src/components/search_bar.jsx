@@ -5,9 +5,9 @@ const SearchBar = () =>
     return <div>Search Bar is Rendered!</div>;
 }
 
-export const SearchBarResult = () =>
+export const SearchBarResult = (props) =>
 {
-    return <input />;
+    return <input onChange={props.onHandleChange} />;
 }
 
 export default SearchBar;
