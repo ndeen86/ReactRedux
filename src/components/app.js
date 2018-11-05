@@ -9,15 +9,16 @@ class App extends Component {
   {
     super(props);
     this.state = { videos: []};
-    YTSearch({key:'', term:'Creation'}, (videos) =>
-    {
-      this.setState({ videos });
-    });
     this.onHandleChange = this.onHandleChange.bind(this);
   }
 
-  onHandleChange(event) {
-    console.log(event);
+  onHandleChange(value) {
+    console.log(value);
+    YTSearch({key:'', term:'Creation'}, (videos) =>
+    {
+      console.log(videos);
+      this.setState({ videos });
+    });
   }
 
   render() {
@@ -28,7 +29,7 @@ class App extends Component {
         </div>
         <div>
           <div className="col-md-6">
-            <VideoDetails />
+            <VideoDetails selectedItem={this.state.videos[0]} />
           </div>
           <div className="col-md-6">
             <VideoList videos={this.state.videos} />

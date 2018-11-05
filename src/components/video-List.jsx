@@ -10,7 +10,7 @@ const VideoList = ({videos}) =>
         return <VideoListItem key={video.snippet.title} videoItem={video}/>
     });
     return (
-        <ul>
+        <ul className="col-md-4 list-group">
             {videoListItems}
         </ul>
     );
