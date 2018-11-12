@@ -14,7 +14,7 @@ class SearchBar extends React.Component
     }
     render() 
     { 
-        return <input onChange={(event) => this.onHandleChange(event.target) } />;
+        return <input className="form-control" onChange={(event) => this.onHandleChange(event.target) } />;
     }
 }
 export default SearchBar;
